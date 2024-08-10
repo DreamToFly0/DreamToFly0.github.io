@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>调查问卷</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        min-height: 100vh;
+        background-color: #e493d0;
+        background-image: radial-gradient(
+            closest-side,
+            rgba(235, 105, 78, 1),
+            rgba(235, 105, 78, 0)
+          ),
+          radial-gradient(
+            closest-side,
+            rgba(243, 11, 164, 1),
+            rgba(243, 11, 164, 0)
+          ),
+          radial-gradient(
+            closest-side,
+            rgba(254, 234, 131, 1),
+            rgba(254, 234, 131, 0)
+          ),
+          radial-gradient(
+            closest-side,
+            rgba(170, 142, 245, 1),
+            rgba(170, 142, 245, 0)
+          ),
+          radial-gradient(
+            closest-side,
+            rgba(248, 192, 147, 1),
+            rgba(248, 192, 147, 0)
+          );
+        background-size: 130vmax 130vmax, 80vmax 80vmax, 90vmax 90vmax,
+          110vmax 110vmax, 90vmax 90vmax;
+        background-position: -80vmax -80vmax, 60vmax -30vmax, 10vmax 10vmax,
+          -30vmax -10vmax, 50vmax 50vmax;
+        background-repeat: no-repeat;
+        animation: 10s movement linear infinite;
+      }
+      @keyframes movement {
+        0%,
+        100% {
+          background-size: 130vmax 130vmax, 80vmax 80vmax, 90vmax 90vmax,
+            110vmax 110vmax, 90vmax 90vmax;
+          background-position: -80vmax -80vmax, 60vmax -30vmax, 10vmax 10vmax,
+            -30vmax -10vmax, 50vmax 50vmax;
+        }
+        25% {
+          background-size: 100vmax 100vmax, 90vmax 90vmax, 100vmax 100vmax,
+            90vmax 90vmax, 60vmax 60vmax;
+          background-position: -60vmax -90vmax, 50vmax -40vmax, 0vmax -20vmax,
+            -40vmax -20vmax, 40vmax 60vmax;
+        }
+        50% {
+          background-size: 80vmax 80vmax, 110vmax 110vmax, 80vmax 80vmax,
+            60vmax 60vmax, 80vmax 80vmax;
+          background-position: -50vmax -70vmax, 40vmax -30vmax, 10vmax 0vmax,
+            20vmax 10vmax, 30vmax 70vmax;
+        }
+        75% {
+          background-size: 90vmax 90vmax, 90vmax 90vmax, 100vmax 100vmax,
+            90vmax 90vmax, 70vmax 70vmax;
+          background-position: -50vmax -40vmax, 50vmax -30vmax, 20vmax 0vmax,
+            -10vmax 10vmax, 40vmax 60vmax;
+        }
+      }
+
+      .container {
+        width: 100%;
+        max-width: 100%;
+        padding: 20px;
+        background: rgba(255, 255, 255, 0);
+        margin: auto;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      h1 {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      form {
+        margin-bottom: 50px;
+      }
+
+      label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+      }
+
+      input[type="text"],
+      textarea {
+        width: 100%;
+        padding: 15px;
+        margin-bottom: 20px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        resize: vertical;
+      }
+
+      textarea {
+        min-height: 150px;
+      }
+
+      input[type="submit"] {
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+        width: 100%;
+        margin-top: 10px;
+      }
+
+      input[type="submit"]:hover {
+        background-color: #0056b3;
+      }
+
+      .footer {
+        background: #e9e9e9;
+        padding: 10px 20px;
+        text-align: center;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+      }
+
+      .footer a {
+        color: #007bff;
+        text-decoration: none;
+        font-size: 12px;
+      }
+
+      .footer a:hover {
+        text-decoration: underline;
+      }
+      .custom-link {
+        color: #00ffffb0;
+        text-decoration: none;
+        font-size: 12px;
+      }
+
+      .custom-link:hover {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>调查问卷</h1>
+      <form id="surveyForm" style="display: none">
+        <p>开个玩笑😅下面是一些正经问题</p>
+        <label for="hobby">1. 你的兴趣爱好是：</label>
+        <input
+          type="text"
+          id="hobby"
+          name="hobby"
+          placeholder="请输入......"
+        /><br />
+
+        <label for="specialty">2. 你认为自己的特长是：</label>
+        <input
+          type="text"
+          id="specialty"
+          name="specialty"
+          placeholder="请输入......"
+        /><br />
+
+        <label for="interest">3. 你在网上经常关注啥：</label>
+        <input
+          type="text"
+          id="interest"
+          name="interest"
+          placeholder="请输入......"
+        /><br />
+
+        <label for="self_description">4. 你觉得自己是个怎样的女生：</label>
+        <textarea
+          id="self_description"
+          name="self_description"
+          placeholder="描述一下自己？"
+        ></textarea
+        ><br />
+
+        <label for="anything">5. Anything:</label>
+        <input
+          type="text"
+          id="anything"
+          name="anything"
+          placeholder="You can input anything if you want..."
+        /><br />
+
+        <input type="submit" value="提交" />
+      </form>
+      <iframe
+        class="airtable-embed"
+        src="https://airtable.com/embed/appd3XMiKUdng9ddZ/pag38HYbg6sWiWPuj/form"
+        frameborder="0"
+        onmousewheel=""
+        width="100%"
+        height="533"
+        style="background: transparent; border: 1px solid #ccc"
+      ></iframe>
+
+      <a href="https://dreamtofly0.github.io/index4.html" class="custom-link"
+        >zy</a
+      >
+      <div id="results"></div>
+    </div>
+    <script>
+      function displayResults(data) {
+        var resultsContainer = document.getElementById("results");
+        resultsContainer.innerHTML = "";
+
+        for (var key in data) {
+          if (data.hasOwnProperty(key)) {
+            resultsContainer.innerHTML +=
+              "<p>" + key + ": " + data[key] + "</p>";
+          }
+        }
+      }
+
+      document
+        .getElementById("surveyForm")
+        .addEventListener("submit", function (event) {
+          event.preventDefault();
+
+          var data = {
+            hobby: document.getElementById("hobby").value,
+            specialty: document.getElementById("specialty").value,
+            interest: document.getElementById("interest").value,
+            self_description: document.getElementById("self_description").value,
+            anything: document.getElementById("anything").value,
+          };
+
+          displayResults(data);
+
+          localStorage.setItem("surveyData", JSON.stringify(data));
+
+          alert("辛苦了，我之后会看到😃");
+        });
+
+      window.addEventListener("load", function () {
+        var storedData = JSON.parse(localStorage.getItem("surveyData"));
+        if (storedData) {
+          displayResults(storedData);
+        }
+      });
+    </script>
+  </body>
+</html>
