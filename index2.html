@@ -105,7 +105,7 @@
           required
         />
       </p>
-      <p>2. 你是否不擅长使用手机：</p>
+      <p>2. 你是否不擅长使用网络：</p>
       <p>
         <input
           type="radio"
@@ -169,7 +169,7 @@
 
         var notGoodAtPhoneText = data.notGoodAtPhone || "未选择";
         resultsContainer.innerHTML +=
-          "<p>不擅长使用手机: " + notGoodAtPhoneText + "</p>";
+          "<p>不擅长使用网络: " + notGoodAtPhoneText + "</p>";
 
         var rarelyUseWeChatText = data.rarelyUseWeChat || "未选择";
         resultsContainer.innerHTML +=
@@ -202,7 +202,7 @@
         resultsContainer.innerHTML = "";
         resultsContainer.innerHTML += "<p>提交的日期: " + data.date + "</p>";
         resultsContainer.innerHTML +=
-          "<p>不擅长使用手机: " + data.notGoodAtPhone + "</p>";
+          "<p>不擅长使用网络: " + data.notGoodAtPhone + "</p>";
         resultsContainer.innerHTML +=
           "<p>很少使用微信: " + data.wechatUsage + "</p>";
       }
@@ -221,4 +221,5 @@
     </script>
     <div id="results"></div>
   </body>
+  <!--在这个页面中提交的数据只能保存在本地而不能传输到airtable,将这个页面留下仅是为我的初次探索留个纪念。-->
 </html>
